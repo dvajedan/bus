@@ -102,3 +102,25 @@ send.addEventListener("click", () => {
     }, 5000);
   }
 });
+
+document.getElementById("dots").addEventListener("click", () => {
+  const element = document.documentElement;
+
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  } else {
+    alert("Fullscreen not supported on this browser.");
+  }
+
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
+});
